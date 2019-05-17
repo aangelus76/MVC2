@@ -34,12 +34,8 @@ Ex : **contacter/admin/urgent**
 | ## |Catégorie (Nom du dossier dans app/views/pages/)  |admin.phtml dans dossier app/views/pages/contacter    |fonction dans app/controllers/contacterController.php |
 
 
-graph LR
-A{Index.php} -- Cherche les fonctions --> B(app/controllers/contacterController.php);
-A -- Recherche la page --> C(app/views/pages/contacter/admin.phtml);
-B -- Injection dans layout --> D((/app/views/pages/layout.phtml));
-C -- Injection dans layout --> D;
-Chemat : ![demo](https://www.petit-fichier.fr/2019/05/17/mermaid-diagram-20190517114634-1/)
+
+Chemat : ![demo](https://image.noelshack.com/fichiers/2019/20/5/1558087302-chemat.jpg)
 > [Graph](https://mermaidjs.github.io/)
 
 ### Explication d'appelle des "Controller". ###
