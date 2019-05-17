@@ -27,7 +27,7 @@ Type de requette :
 
 /de , /tous , /  => Action  appellé dans le Controller
 
-contacter/admin/urgent
+Ex : **contacter/admin/urgent**
 
 |    |contacter        |admin                                    |urgent                                |
 |----|-----------------|-----------------------------------------|--------------------------------------|
