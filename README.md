@@ -29,9 +29,9 @@ Type de requette :
 
 Ex : **contacter/admin/urgent**
 
-|    |contacter        |admin                                    |urgent                                |
-|----|-----------------|-----------------------------------------|--------------------------------------|
-| ## |Catégorie        |admin.phtml dans dossier contacter       |fonction dans contacterController.php |
+|    |contacter                                         |admin                                                 |urgent                                                |
+|----|--------------------------------------------------|------------------------------------------------------|------------------------------------------------------|
+| ## |Catégorie (Nom du dossier dans app/views/pages/)  |admin.phtml dans dossier app/views/pages/contacter    |fonction dans app/controllers/contacterController.php |
 
 ### Explication d'appelle des "Controller". ###
 Les Controllers font ofice de catégorie,
