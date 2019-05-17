@@ -53,7 +53,11 @@ $StartApps->run();
 <div id="myModal" class="modal fade myModal" tabindex="-1" role="dialog" aria-labelledby="Fenêtre de débug !" aria-hidden="true">
   <div class="modal-dialog modal-lg">
   <div class="modal-content">
-    <pre>
+	  <header class="modal-header">
+          <h3 class="text-danger">Fenêtre de Débug.</h3>
+          <button class="close" data-dismiss="modal">&times;</button>
+        </header>
+    <pre style="font-size: 9px">
 <?php
 //Liste toutes les classes définies dans PHP
 echo '<font color="#009900" face="Arial Black">Class et Fonction Associé disponible</font> :<br>############<br>';
@@ -95,3 +99,21 @@ echo '<font color="#009900" face="Arial Black"><p></p>Constantes et leurs valeur
   </div>
 </div>
 </div>
+<!-- Modal de versioning -->
+ <div class="modal" id="ModalVersion">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <header class="modal-header">
+          <h3 class="text-success">Suivre le versioning</h3>
+          <button class="close" data-dismiss="modal">&times;</button>
+        </header>
+        <div class="modal-body">
+		  <p><strong><i class="fas fa-archive"></i> W20.19.5.d </strong> <br /> - Misa a jour pour Font Awesome</p>
+          <p><strong><i class="fas fa-archive"></i> W20.19.4.c </strong> <br /> - Misa a jour pour bootstrap v4</p>
+         </div>
+        <footer class="modal-footer">
+          <button class="btn btn-danger" data-dismiss="modal">Fermer</button>
+        <footer>
+      </div> 
+    </div> 
+  </div> 

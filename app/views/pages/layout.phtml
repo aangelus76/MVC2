@@ -8,6 +8,7 @@
 <link rel="stylesheet" type="text/css" href="<?php echo Apps_Style; ?>bootstrap4/css/bootstrap-responsive.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo Apps_Style; ?>bootstrap4/css/theme.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo Apps_Style; ?>bootstrap4/font/css/open-iconic-bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo Apps_Style; ?>bootstrap4/fonta/css/all.css" rel="stylesheet">
 <script src="<?php echo Apps_Style; ?>bootstrap4/js/jquery-3.2.1.slim.min.js"></script>
 <script src="<?php echo Apps_Style; ?>bootstrap4/js/popper.min.js"></script>
 <script src="<?php echo Apps_Style; ?>bootstrap4/js/bootstrap.min.js"></script>
@@ -23,8 +24,9 @@
                  <div class="jumbotron">
 				  <h1 class="Gold"><span class="oi oi-cloud"></span> Acceuil du MVC . <small>Prototype <?= MVC_VERSION; ?></small></h1>
 				  <p class="lead">MVC réalisé et adapté au besoin de la plateform RecruteAnim.</p>
-        		<p>Dépos : <a href="https://github.com/aangelus76/MVC_BASE">GitHub</a> sans support d'aide de réutilisation en dehors du projet.</p>
+        		<p>Dépos : <i class="fab fa-github"></i> <a href="https://github.com/aangelus76/MVC_BASE">GitHub</a> sans support d'aide de réutilisation en dehors du projet.</p>
         		<button type="button" data-toggle="modal" data-target=".myModal" class="btn btn-danger btn-lg">Fenetre de Débug.</button>
+				<button type="button" data-toggle="modal" data-target="#ModalVersion" class="btn btn-success btn-lg">Fenetre de Version.</button>
 			     <?= $this->MsgError; ?>
 				 </div>
               </div>

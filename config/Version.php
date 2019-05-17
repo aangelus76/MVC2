@@ -1,8 +1,8 @@
 ﻿<?php
 
-$MvcVersion = "RC_W2019.a";
+$MvcVersion = "W20.19.5.d";
 $MvcStatu   = "Dev";
-$MvcType    = "Release";
+$MvcType    = "Build";
 
 define('MVC_VERSION',$MvcVersion);
 define('MVC_STATU',$MvcStatu);
