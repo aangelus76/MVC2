@@ -1,6 +1,6 @@
 ﻿<?php
 
-$MvcVersion = "W20.19.5.d";
+$MvcVersion = "W20.19.5.e";
 $MvcStatu   = "Dev";
 $MvcType    = "Build";
 
