@@ -26,7 +26,10 @@ Type de requette :
 /offres => pages qui serras inclus dans le layout
 
 /de , /tous , /  => Action  appellé dans le Controller
- 
+
+contacter/admin/urgent
+contacter        admin                                    urgent
+Catégorie        admin.phtml dans dossier contacter       fonction dans contacterController.php
 
 ### Explication d'appelle des "Controller". ###
 Les Controllers font ofice de catégorie,

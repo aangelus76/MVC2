@@ -53,7 +53,11 @@
           <li class="nav-item"><a class="nav-link"  href="<?= WEB_ROOT; ?>/poster"><i class="fas fa-edit iconeMenu"></i>Poster.</a></li>
           <li class="nav-item"><a class="nav-link"  href="<?= WEB_ROOT; ?>/parametrer"><i class="fas fa-cogs iconeMenu"></i>Configuration.</a></li>
           <li class="nav-item"><a class="nav-link"  href="<?= WEB_ROOT; ?>/contacter"><i class="fas fa-address-book iconeMenu"></i>Contacter.</a></li>
-          <li class="nav-item"><a class="nav-link"  href="<?= WEB_ROOT; ?>/repertoire"><i class="fas fa-folder-open iconeMenu"></i>Voire mon répertoire.</a></li>
+		  <?php
+			if($_SESSION['login'] == 1){
+          echo '<li class="nav-item"><a class="nav-link"  href="'.WEB_ROOT.'/repertoire"><i class="fas fa-folder-open iconeMenu"></i>Voire mon répertoire.</a></li>';
+			}
+		?>
         </ul>	
 	</div>
     </div>

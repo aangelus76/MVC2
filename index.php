@@ -9,6 +9,9 @@
 * @version 1.32.a
 *
 */
+session_start();
+$_SESSION['login'] = 1;
+
 define("ROOT", realpath(__dir__ . "/"));
 define("WEB_ROOT", substr($_SERVER['SCRIPT_NAME'], 0, strpos($_SERVER['SCRIPT_NAME'], "/index.php")));
 
