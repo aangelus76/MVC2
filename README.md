@@ -39,7 +39,7 @@ A{Index.php} -- Cherche les fonctions --> B(app/controllers/contacterController.
 A -- Recherche la page --> C(app/views/pages/contacter/admin.phtml);
 B -- Injection dans layout --> D((/app/views/pages/layout.phtml));
 C -- Injection dans layout --> D;
-
+Chemat : ![demo](https://www.petit-fichier.fr/2019/05/17/mermaid-diagram-20190517114634-1/)
 > [Graph](https://mermaidjs.github.io/)
 
 ### Explication d'appelle des "Controller". ###
