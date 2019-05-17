@@ -33,6 +33,14 @@ Ex : **contacter/admin/urgent**
 |----|--------------------------------------------------|------------------------------------------------------|------------------------------------------------------|
 | ## |Catégorie (Nom du dossier dans app/views/pages/)  |admin.phtml dans dossier app/views/pages/contacter    |fonction dans app/controllers/contacterController.php |
 
+```mermaid
+graph LR
+A{Index.php} -- Cherche les fonctions --> B(app/controllers/contacterController.php)
+A -- Recherche la page --> C(app/views/pages/contacter/admin.phtml)
+B -- Injection dans layout --> D((/app/views/pages/layout.phtml))
+C -- Injection dans layout --> D
+```
+
 ### Explication d'appelle des "Controller". ###
 Les Controllers font ofice de catégorie,
 Appeller le controller consulterController.php revien a appeller la categorie "consulter"
