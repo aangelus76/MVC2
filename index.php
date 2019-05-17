@@ -20,6 +20,7 @@ define("Apps_Model", ROOT . "/app/models/");
 define("Apps_Views", Apps_Root . "views/");
 define("Apps_Pages", Apps_Views . "pages/");
 define("Apps_Style", WEB_ROOT . "/app/views/resources/");
+define("API","../app/views/resources/");
 
 require_once "config/Version.php";
 require_once(ROOT . "/root/Apps.php");

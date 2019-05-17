@@ -1,0 +1,101 @@
+<div class="col-md-2">
+      <div class="sidebar-nav">
+<?php
+ require_once('menu.phtml')
+?>
+	</div>
+</div>
+    <div class="col-md-8">
+      <div class="well text-success"> 
+<script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyCTIn22N0OJ6j4PjvTkqi8ROqN_XhKZUyQ"></script>
+<script type="text/javascript" src="<?php echo API; ?>map/markerclusterer.js"></script>
+<script type="text/javascript" src="<?php echo API; ?>map/oms.min.js"></script>
+<script src="<?php echo API; ?>map/data.js"></script>
+
+<style>
+	#cluster {
+		width: 100%;
+		height: 700px;
+		margin-bottom: 10px;
+	}
+	
+</style>
+	<div id="cluster" style="height: 90%; width: 100%; min-height: 510px"></div>
+<script type="text/javascript">
+	
+
+	var myLatLngCenter = new google.maps.LatLng(49.3799, 1.1081);
+	var options = {
+		center: new google.maps.LatLng(49.3799, 1.1081),
+		zoom: 13,
+		mapTypeId: google.maps.MapTypeId.ROADMAP,
+		panControl: false,
+		disableDefaultUI: true
+	};
+	
+	var map = new google.maps.Map(document.getElementById("cluster"), options);
+	
+	var oms = new OverlappingMarkerSpiderfier(map);
+	//
+	var cities = getDataJson();
+	
+	var markers = [];
+	for (var i = 0; i < cities.length; i++) {
+		var markerOptions = {
+			position: new google.maps.LatLng(cities[i][2], cities[i][3]),
+			title: cities[i][1],
+			city: cities[i]
+		};
+		console.log(cities[i][1]);
+		var marker = new google.maps.Marker(markerOptions);
+		markers.push(marker);
+		oms.addMarker(marker);
+	}
+	
+	var markerClusterer = new MarkerClusterer(map, markers, {
+		maxZoom: 12, // maxZoom set when clustering will stop
+		imagePath: '<?php echo API; ?>map/Marker/MarkerOver'
+	});
+
+	/*Affichage Centré par rapport a tout les markers
+	// Automatically set the viewport of the map with bounds that fit all the markers on it
+	var bounds = new google.maps.LatLngBounds();
+	for (var i = 0; i < markers.length; ++i) {
+		bounds.extend(this.markers[i].position);
+	}
+	map.fitBounds(bounds);
+	*/
+	var infoWindow = new google.maps.InfoWindow();
+	oms.addListener('click', function(marker, event) {
+		infoWindow.setContent(marker.city[0] + ", </br>" + marker.city[1]);
+		infoWindow.open(map, marker);
+	});
+	
+	// Limit the maximum zoom level when all marker are on the same position in a cluster
+	google.maps.event.addListener(markerClusterer, 'clusterclick', function(cluster) {
+		map.fitBounds(cluster.getBounds()); // Fit the bounds of the cluster clicked on
+		if (map.getZoom() > 18) {
+			map.setZoom(18);
+		}
+	});
+	var cityCircle = new google.maps.Circle({
+				strokeColor: '#107372',
+				strokeOpacity: 0.5,
+				strokeWeight: 1,
+				fillColor: '#107372',
+				fillOpacity: 0.20,
+				map: map,
+				center: myLatLngCenter,
+				radius: 2500
+			});  
+	
+</script>
+		</div>
+</div>
+<div class="col-md-2">
+      <div class="sidebar-nav">
+<?php
+ require_once('menumap.phtml')
+?>
+	</div>
+</div>
