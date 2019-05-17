@@ -28,9 +28,10 @@ Type de requette :
 /de , /tous , /  => Action  appellé dans le Controller
 
 contacter/admin/urgent
-|contacter        |admin                                    |urgent                                |
-|-----------------|-----------------------------------------|--------------------------------------|
-|Catégorie        |admin.phtml dans dossier contacter       |fonction dans contacterController.php |
+
+|    |contacter        |admin                                    |urgent                                |
+|----|-----------------|-----------------------------------------|--------------------------------------|
+| ## |Catégorie        |admin.phtml dans dossier contacter       |fonction dans contacterController.php |
 
 ### Explication d'appelle des "Controller". ###
 Les Controllers font ofice de catégorie,
