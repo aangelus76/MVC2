@@ -61,14 +61,21 @@ $StartApps->run();
           <h3 class="text-danger">Fenêtre de Débug.</h3>
           <button class="close" data-dismiss="modal">&times;</button>
         </header>
-    <pre style="font-size: 9px">
+    <pre style="font-size: 12px">
 <?php
 //Liste toutes les classes définies dans PHP
 echo '<font color="#009900" face="Arial Black">Class et Fonction Associé disponible</font> :<br>############<br>';
  $ClassTotal = get_declared_classes();
+$ArrayEscape = array('IntlDateFormatter','ResourceBundle','Transliterator','IntlTimeZone','IntlCalendar','IntlGregorianCalendar','Spoofchecker','IntlException','IntlIterator','IntlBreakIterator','IntlRuleBasedBreakIterator','IntlCodePointBreakIterator','IntlPartsIterator','UConverter','mysqli_sql_exception','mysqli_driver','mysqli','mysqli_warning','mysqli_result','mysqli_stmt','PharException','Phar','PharData','PharFileInfo','SoapClient','SoapVar','SoapServer','SoapFault','SoapParam','SoapHeader','SQLite3','SQLite3Stmt','SQLite3Result','XSLTProcessor');
  for( $i = 130; $i < count($ClassTotal); $i++){
-	 echo $ClassTotal[$i]."<br>";
+	 if(in_array($ClassTotal[$i],$ArrayEscape, true)){
+		 $push = "";
+	 }
+	 else{
+	 echo '<b style="font-size:16px">'.$ClassTotal[$i].':</b><br><div style="margin-left:50px;">';
          print_r(get_class_methods($ClassTotal[$i]));
+	 echo '</div><hr>';
+	 }
  }
 
 //echo '<font color="#009900" face="Arial Black">Fonction disponible dans class</font> :<br>############<br>';
