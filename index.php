@@ -50,12 +50,9 @@ $StartApps->run();
 <!--  Partie Utile Uniquement Pour Le Dev
       Ligne de débugage -->
 
-<div id="myModal" class="modal hide fade" tabindex="-1" data-replace="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3>Fenetre de Débug !</h3>
-  </div>
-  <div class="modal-body">
+<div id="myModal" class="modal fade myModal" tabindex="-1" role="dialog" aria-labelledby="Fenêtre de débug !" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+  <div class="modal-content">
     <pre>
 <?php
 //Liste toutes les classes définies dans PHP
@@ -92,9 +89,9 @@ echo '<font color="#009900" face="Arial Black"><p></p>Constantes et leurs valeur
           /* */
         ?>
     </pre>
+	  <div class="modal-footer">
+    <button type="button" data-dismiss="modal" class="btn  btn-success">Fermer</button>
   </div>
-  <div class="modal-footer">
-    <button type="button" data-dismiss="modal" class="btn">Fermer</button>
   </div>
 </div>
-
+</div>

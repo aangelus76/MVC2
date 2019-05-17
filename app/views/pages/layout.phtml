@@ -4,58 +4,75 @@
 <title>MVC Perso</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Bootstrap -->
-<link href="<?php echo Apps_Style; ?>bootstrap4/css/bootstrap.min.css" rel="stylesheet" media="screen" crossorigin="anonymous">
-
-<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!--[if lt IE 9]>
-      <script src="../../assets/js/html5shiv.js"></script>
-      <script src="../../assets/js/respond.min.js"></script>
-    <![endif]-->
-<link rel="stylesheet" type="text/css" href="<?php echo Apps_Style; ?>css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo Apps_Style; ?>bootstrap4/css/bootstrap.min.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="<?php echo Apps_Style; ?>bootstrap4/css/bootstrap-responsive.css" />
-<script type="text/javascript" src="<?php echo Apps_Style; ?>bootstrap4/js/bootstrap.js"></script>
-<link rel="stylesheet" type="text/css" href="<?php echo Apps_Style; ?>bootstrap/theme/css/general.css" />
-<link rel="stylesheet" type="text/css" href="<?php echo Apps_Style; ?>bootstrap/theme/css/footerSticky.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo Apps_Style; ?>bootstrap4/css/theme.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo Apps_Style; ?>bootstrap4/font/css/open-iconic-bootstrap.css" />
+<script src="<?php echo Apps_Style; ?>bootstrap4/js/jquery-3.2.1.slim.min.js"></script>
+<script src="<?php echo Apps_Style; ?>bootstrap4/js/popper.min.js"></script>
+<script src="<?php echo Apps_Style; ?>bootstrap4/js/bootstrap.min.js"></script>
 
 </head>
 <body>
 <div class="container-fluid">
-  <div class="row-fluid">
-<div class="hero-unit span9">
-  <h1 class="Gold">Acceuil du MVC . <small>Prototype <?= MVC_VERSION; ?></small></h1>
-  <p></p>
-  <div class="container">
-        <p class="lead">MVC réalisé et adapté au besoin de la plateform RecruteAnim.</p>
-        <p>Dépos : <a href="https://github.com/aangelus76/MVC_BASE">GitHub</a> sans support d'aide de réutilisation en dehors du projet.</p>
-        <button type="button" data-toggle="modal" data-target="#myModal" class="btn-danger btn-large">Fenetre de Débug.</button>
-     <?= $this->MsgError; ?>
+  <div class="row">
+    <div class="col-sm-10">
+        <div class="panel panel-blue">
+          <div class="row">
+              <div class="col-md-12">
+                 <div class="jumbotron">
+				  <h1 class="Gold"><span class="oi oi-cloud"></span> Acceuil du MVC . <small>Prototype <?= MVC_VERSION; ?></small></h1>
+				  <p class="lead">MVC réalisé et adapté au besoin de la plateform RecruteAnim.</p>
+        		<p>Dépos : <a href="https://github.com/aangelus76/MVC_BASE">GitHub</a> sans support d'aide de réutilisation en dehors du projet.</p>
+        		<button type="button" data-toggle="modal" data-target=".myModal" class="btn btn-danger btn-lg">Fenetre de Débug.</button>
+			     <?= $this->MsgError; ?>
+				 </div>
+              </div>
+              
+          </div>
+          <!--<div class="row-fluid">
+              <div class="col-md-5">
+                 <div class="panel panel-purple">This is the second division.</div>
+              </div>
+              <div class="col-md-7">
+                 <div class="panel panel-purple">This is the second division.</div>   
+              </div>
+			  
+          </div>-->
+        </div>
+      </div>     
+    
+    <div class="col-sm-2">
+       <div class="panel panel-blue">
+	<ul class="nav flex-column well">
+          <li class="nav-item"><span class="oi oi-command iconeMenu"></span>Menu de BASE</li>
+          <li class="nav-item"><a class="nav-link"  href="<?= WEB_ROOT; ?>"><span class="oi oi-home iconeMenu"></span>Affiche Index.</a></li>
+          <li class="nav-item"><a class="nav-link"  href="<?= WEB_ROOT; ?>/rechercher"><span class="oi oi-magnifying-glass iconeMenu"></span>Rechercher.</a></li>
+          <li class="nav-item"><a class="nav-link"  href="<?= WEB_ROOT; ?>/consulter"><span class="oi oi-menu iconeMenu"></span></i>Consultation.</a></li>
+          <li class="nav-item"><a class="nav-link"  href="<?= WEB_ROOT; ?>/poster"><span class="oi oi-plus iconeMenu"></span>Poster.</a></li>
+          <li class="nav-item"><a class="nav-link"  href="<?= WEB_ROOT; ?>/parametrer"><span class="oi oi-cog iconeMenu"></span>Configuration.</a></li>
+          <li class="nav-item"><a class="nav-link"  href="<?= WEB_ROOT; ?>/contacter"><span class="oi oi-envelope-closed iconeMenu"></span>Contacter.</a></li>
+          <li class="nav-item"><a class="nav-link"  href="<?= WEB_ROOT; ?>/repertoire"><span class="oi oi-folder iconeMenu"></span>Voire mon répertoire.</a></li>
+        </ul>	
+	</div>
+    </div>
+   </div>
+</div>	
+<div class="container-fluid">
+  <div class="row">
+   
+        <?php echo $this->content(); ?> 
+  
   </div>
-</div> 
-<div class="well sidebar-nav offset1 span2">
-        <ul class="nav nav-list text-left">
-          <li class="nav-header"><i class="icon-align-justify icon-black"></i> Menu de BASE</li>
-          <li><a href="<?= WEB_ROOT; ?>"><i class="icon-home icon-black"></i>Affiche Index.</a></li>
-          <li><a href="<?= WEB_ROOT; ?>/rechercher"><i class="icon-search icon-black"></i>rechercher.</a></li>
-          <li><a href="<?= WEB_ROOT; ?>/consulter"><i class="icon-eye-open icon-black"></i>consultation.</a></li>
-          <li><a href="<?= WEB_ROOT; ?>/poster"><i class="icon-pencil icon-black"></i>Poster.</a></li>
-          <li><a href="<?= WEB_ROOT; ?>/parametrer"><i class="icon-cog icon-black"></i>Configuration.</a></li>
-          <li><a href="<?= WEB_ROOT; ?>/contacter"><i class="icon-envelope icon-black"></i>Contacter.</a></li>
-          <li><a href="<?= WEB_ROOT; ?>/repertoire"><i class=" icon-user icon-black"></i>Voire mon répertoire.</a></li>
-        </ul>
-      </div>
-</div></div>  
-      
-<?php echo $this->content(); ?> 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-<!-- Include all compiled plugins (below), or include individual files as needed --> 
-<div id="footer">
-      <div class="container">
-        <p class="text-muted credit">Copyright Angelus76 - <a href="http://www.recruteanim.fr">RecruteAnim</a>.</p>
-      </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>-->
-<script src="<?php echo Apps_Style; ?>bootstrap4/js/bootstrap.min.js"></script>
+<footer class="footer">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+        <p class="text-muted">Copyright 2019 Angelus76 - <a href="http://www.recruteanim.fr">RecruteAnim</a>.</p>
+    </div>
+  </div>
+</div>
+</footer>
 </body>
 </html>
