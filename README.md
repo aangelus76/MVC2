@@ -35,10 +35,10 @@ Ex : **contacter/admin/urgent**
 
 
 graph LR
-A{Index.php} -- Cherche les fonctions --> B(app/controllers/contacterController.php)
-A -- Recherche la page --> C(app/views/pages/contacter/admin.phtml)
-B -- Injection dans layout --> D((/app/views/pages/layout.phtml))
-C -- Injection dans layout --> D
+A{Index.php} -- Cherche les fonctions --> B(app/controllers/contacterController.php);
+A -- Recherche la page --> C(app/views/pages/contacter/admin.phtml);
+B -- Injection dans layout --> D((/app/views/pages/layout.phtml));
+C -- Injection dans layout --> D;
 
 > [Graph](https://mermaidjs.github.io/)
 
