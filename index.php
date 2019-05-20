@@ -10,7 +10,7 @@
 *
 */
 session_start();
-$_SESSION['login'] = 1;
+$_SESSION['login'] = 0;
 
 define("ROOT", realpath(__dir__ . "/"));
 define("WEB_ROOT", substr($_SERVER['SCRIPT_NAME'], 0, strpos($_SERVER['SCRIPT_NAME'], "/index.php")));
@@ -18,12 +18,19 @@ define("WEB_ROOT", substr($_SERVER['SCRIPT_NAME'], 0, strpos($_SERVER['SCRIPT_NA
 define("Apps_Root", ROOT . "/app/");
 define("Apps_Model", ROOT . "/app/models/");
 define("Apps_Views", Apps_Root . "views/");
-define("Apps_Pages", Apps_Views . "pages/");
+if($_SESSION['login'] == 1){
+	define("Apps_Pages", Apps_Views . "pagesMember/");
+}
+else{
+	define("Apps_Pages", Apps_Views . "pagesVisitor/");
+}
+//define("Apps_Pages", Apps_Views . "pages/");
 define("Apps_Style", WEB_ROOT . "/app/views/resources/");
 define("API","../app/views/resources/");
 
 require_once "config/Version.php";
 require_once(ROOT . "/root/Apps.php");
+
 $StartApps = new Apps();
 $StartApps->run();
 ?>

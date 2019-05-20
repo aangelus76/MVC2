@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MVC Perso</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Bootstrap -->
+<link rel="stylesheet" type="text/css" href="<?php echo Apps_Style; ?>bootstrap4/css/bootstrap.min.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="<?php echo Apps_Style; ?>bootstrap4/css/bootstrap-responsive.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo Apps_Style; ?>bootstrap4/css/theme.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo Apps_Style; ?>bootstrap4/font/awesome/css/all.css" rel="stylesheet">
+<script src="<?php echo Apps_Style; ?>bootstrap4/js/jquery-3.2.1.slim.min.js"></script>
+<script src="<?php echo Apps_Style; ?>bootstrap4/js/popper.min.js"></script>
+<script src="<?php echo Apps_Style; ?>bootstrap4/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-10">
+        <div class="panel panel-blue">
+          <div class="row">
+              <div class="col-md-12">
+                 <div class="jumbotron">
+				  <h1 class="Gold"><i class="fas fa-cloud"></i> Acceuil du MVC . <small>Prototype <?= MVC_VERSION; ?></small></h1>
+				  <p class="lead">MVC réalisé et adapté au besoin de la plateform RecruteAnim.</p>
+					 <p>Page de Membre.</p>
+        		<p>Dépos : <i class="fab fa-github"></i> <a href="https://github.com/aangelus76/MVC2" target="_blank">GitHub</a> sans support d'aide de réutilisation en dehors du projet.</p>
+				<p>Explication : <i class="fas fa-book"></i> <a href="https://aangelus76.github.io/MVC2/" target="_blank">GitHub</a> ... </p>
+        		<button type="button" data-toggle="modal" data-target=".myModal" class="btn btn-danger btn-lg">Fenetre de Débug.</button>
+				<button type="button" data-toggle="modal" data-target="#ModalVersion" class="btn btn-success btn-lg">Fenetre de Version.</button>
+			     <?= $this->MsgError; ?>
+				 </div>
+              </div>
+              
+          </div>
+          <!--<div class="row-fluid">
+              <div class="col-md-5">
+                 <div class="panel panel-purple">This is the second division.</div>
+              </div>
+              <div class="col-md-7">
+                 <div class="panel panel-purple">This is the second division.</div>   
+              </div>
+			  
+          </div>-->
+        </div>
+      </div>     
+    
+    <div class="col-sm-2">
+       <div class="panel panel-blue">
+	<ul class="nav flex-column well">
+          <li class="nav-item"><i class="fas fa-chevron-right iconeMenu"></i>Menu de BASE</li>
+          <li class="nav-item"><a class="nav-link"  href="<?= WEB_ROOT; ?>"><i class="fas fa-home iconeMenu"></i>Affiche Index.</a></li>
+          <li class="nav-item"><a class="nav-link"  href="<?= WEB_ROOT; ?>/rechercher"><i class="fas fa-search iconeMenu"></i>Rechercher.</a></li>
+          <li class="nav-item"><a class="nav-link"  href="<?= WEB_ROOT; ?>/consulter"><i class="fas fa-book-open iconeMenu"></i>Consultation.</a></li>
+          <li class="nav-item"><a class="nav-link"  href="<?= WEB_ROOT; ?>/poster"><i class="fas fa-edit iconeMenu"></i>Poster.</a></li>
+          <li class="nav-item"><a class="nav-link"  href="<?= WEB_ROOT; ?>/parametrer"><i class="fas fa-cogs iconeMenu"></i>Configuration.</a></li>
+          <li class="nav-item"><a class="nav-link"  href="<?= WEB_ROOT; ?>/contacter"><i class="fas fa-address-book iconeMenu"></i>Contacter.</a></li>
+          <li class="nav-item"><a class="nav-link"  href="'.WEB_ROOT.'/repertoire"><i class="fas fa-folder-open iconeMenu"></i>Voire mon répertoire.</a></li>
+        </ul>	
+	</div>
+    </div>
+   </div>
+</div>	
+<div class="container-fluid">
+  <div class="row">
+   
+        <?php echo $this->content(); ?> 
+  
+  </div>
+</div>
+<footer class="footer">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+        <p class="text-muted">Copyright 2019 Angelus76 <small><i class="far fa-copyright"></i></small> - <a href="http://www.recruteanim.fr">RecruteAnim</a>.</p>
+    </div>
+  </div>
+</div>
+</footer>
+</body>
+</html>
